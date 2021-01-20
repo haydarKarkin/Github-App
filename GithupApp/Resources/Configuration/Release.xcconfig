@@ -1,0 +1,12 @@
+//
+//  Release.xcconfig
+//  GithupApp
+//
+//  Created by Haydar Karkin on 21.01.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ROOT_URL = https:/$()/api.github.com
+ENV_TYPE = DEBUG
