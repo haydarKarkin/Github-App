@@ -10,9 +10,11 @@ import UIKit
 class AppCoordinator: Coordinator {
     
     private let window: UIWindow
+    private let sharedFactory: SharedFactoryType
     
-    init(window: UIWindow) {
+    init(window: UIWindow, sharedFactory: SharedFactoryType) {
         self.window = window
+        self.sharedFactory = sharedFactory
     }
     
     func start() {
@@ -20,7 +22,9 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        
-        // TODO: - Start main coordinator here.
+        let coordinator = sharedFactory
+            .makeGithubFactory()
+            .makeGithubCoordinator(navigationController: navigationController)
+        coordinate(to: coordinator)
     }
 }

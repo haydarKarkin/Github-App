@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 protocol GithubFactoryType {
-    func makeGithubCoordinator(navigationController: UINavigationController,
-                               githubFactory: GithubFactoryType) -> GithubCoordinatorType
+    func makeGithubCoordinator(navigationController: UINavigationController) -> GithubCoordinatorType
     func makeGithubService() -> GithubServiceType
     func makeRepoDetailVM() -> RepoDetailVM
     func makeSearchRepoVM() -> SearchRepoVM
@@ -28,8 +27,7 @@ class GithubFactory: GithubFactoryType {
         self.sharedFactory = sharedFactory
     }
     
-    func makeGithubCoordinator(navigationController: UINavigationController,
-                               githubFactory: GithubFactoryType) -> GithubCoordinatorType {
+    func makeGithubCoordinator(navigationController: UINavigationController) -> GithubCoordinatorType {
         return GithubCoordinator(navigationController: navigationController, githubFactory: self)
     }
     
