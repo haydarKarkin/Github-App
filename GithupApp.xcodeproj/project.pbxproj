@@ -28,6 +28,8 @@
 		B0FE8B7225B8B89600CAF70D /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B7125B8B89600CAF70D /* OwnerModel.swift */; };
 		B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B7625B8B8F000CAF70D /* LicenseModel.swift */; };
 		B0FE8B7D25B8CD3A00CAF70D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B7C25B8CD3A00CAF70D /* ViewModel.swift */; };
+		B0FE8B8325B8CE0300CAF70D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B8225B8CE0200CAF70D /* ViewController.swift */; };
+		B0FE8B8C25B8CE5A00CAF70D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B8B25B8CE5A00CAF70D /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		B0FE8B7125B8B89600CAF70D /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
 		B0FE8B7625B8B8F000CAF70D /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
 		B0FE8B7C25B8CD3A00CAF70D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B0FE8B8225B8CE0200CAF70D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0FE8B8B25B8CE5A00CAF70D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 		B0FE8B2125B8AD0700CAF70D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE8B8A25B8CE4E00CAF70D /* Config */,
+				B0FE8B8125B8CDEC00CAF70D /* ViewController */,
 				B0FE8B7B25B8CD2300CAF70D /* ViewModel */,
 			);
 			path = Shared;
@@ -277,6 +283,22 @@
 				B0FE8B7C25B8CD3A00CAF70D /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B0FE8B8125B8CDEC00CAF70D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8B8225B8CE0200CAF70D /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B0FE8B8A25B8CE4E00CAF70D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8B8B25B8CE5A00CAF70D /* Config.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,7 +440,9 @@
 				B0FE8B7D25B8CD3A00CAF70D /* ViewModel.swift in Sources */,
 				B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */,
 				B0FE8B4C25B8AF3400CAF70D /* RepoDetailVM.swift in Sources */,
+				B0FE8B8325B8CE0300CAF70D /* ViewController.swift in Sources */,
 				B0FE8B4625B8AF1C00CAF70D /* SearchRepoVM.swift in Sources */,
+				B0FE8B8C25B8CE5A00CAF70D /* Config.swift in Sources */,
 				B0FE8B6825B8B73100CAF70D /* UserRepoModel.swift in Sources */,
 				B0FE8B3E25B8AF0800CAF70D /* UserDetailVM.swift in Sources */,
 				B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */,
@@ -530,7 +554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -585,7 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -603,7 +627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U5M942Y57Y;
 				INFOPLIST_FILE = GithupApp/SupportedFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,7 +647,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U5M942Y57Y;
 				INFOPLIST_FILE = GithupApp/SupportedFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
