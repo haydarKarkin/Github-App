@@ -31,6 +31,8 @@
 		B0FE8B8325B8CE0300CAF70D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B8225B8CE0200CAF70D /* ViewController.swift */; };
 		B0FE8B8C25B8CE5A00CAF70D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B8B25B8CE5A00CAF70D /* Config.swift */; };
 		B0FE8B9D25B8D02B00CAF70D /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B9C25B8D02B00CAF70D /* Storyboarded.swift */; };
+		B0FE8BA325B8D11200CAF70D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BA225B8D11200CAF70D /* Coordinator.swift */; };
+		B0FE8BA825B8D14800CAF70D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BA725B8D14800CAF70D /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		B0FE8B8225B8CE0200CAF70D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0FE8B8B25B8CE5A00CAF70D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		B0FE8B9C25B8D02B00CAF70D /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		B0FE8BA225B8D11200CAF70D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B0FE8BA725B8D14800CAF70D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 		B0FE8B2025B8ACFF00CAF70D /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE8BA725B8D14800CAF70D /* AppCoordinator.swift */,
 				B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */,
 			);
 			path = Application;
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FE8B8A25B8CE4E00CAF70D /* Config */,
+				B0FE8BA125B8D10C00CAF70D /* Coordinator */,
 				B0FE8B8125B8CDEC00CAF70D /* ViewController */,
 				B0FE8B7B25B8CD2300CAF70D /* ViewModel */,
 			);
@@ -302,6 +308,14 @@
 				B0FE8B8B25B8CE5A00CAF70D /* Config.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		B0FE8BA125B8D10C00CAF70D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8BA225B8D11200CAF70D /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,12 +454,14 @@
 				B0FE8B5425B8AFDE00CAF70D /* GithubService.swift in Sources */,
 				B0FE8B5E25B8B1E000CAF70D /* GithubFactory.swift in Sources */,
 				B0FE8B3425B8AE9200CAF70D /* RepoDetailVC.swift in Sources */,
+				B0FE8BA825B8D14800CAF70D /* AppCoordinator.swift in Sources */,
 				B0FE8B7D25B8CD3A00CAF70D /* ViewModel.swift in Sources */,
 				B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */,
 				B0FE8B4C25B8AF3400CAF70D /* RepoDetailVM.swift in Sources */,
 				B0FE8B8325B8CE0300CAF70D /* ViewController.swift in Sources */,
 				B0FE8B4625B8AF1C00CAF70D /* SearchRepoVM.swift in Sources */,
 				B0FE8B8C25B8CE5A00CAF70D /* Config.swift in Sources */,
+				B0FE8BA325B8D11200CAF70D /* Coordinator.swift in Sources */,
 				B0FE8B6825B8B73100CAF70D /* UserRepoModel.swift in Sources */,
 				B0FE8B3E25B8AF0800CAF70D /* UserDetailVM.swift in Sources */,
 				B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */,
