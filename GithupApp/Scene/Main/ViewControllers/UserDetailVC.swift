@@ -7,9 +7,20 @@
 
 import UIKit
 
-class UserDetailVC: UIViewController {
+class UserDetailVC: ViewController<UserDetailVM> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func makeUI() {
+    }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        
+        let input = UserDetailVM.Input()
+        viewModel.transform(input: input){ (output) in
+        }
     }
 }

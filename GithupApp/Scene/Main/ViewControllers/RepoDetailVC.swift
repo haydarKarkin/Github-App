@@ -7,9 +7,20 @@
 
 import UIKit
 
-class RepoDetailVC: UIViewController {
+class RepoDetailVC: ViewController<RepoDetailVM> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func makeUI() {
+    }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        
+        let input = RepoDetailVM.Input()
+        viewModel.transform(input: input){ (output) in
+        }
     }
 }

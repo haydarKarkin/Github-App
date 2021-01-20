@@ -7,10 +7,21 @@
 
 import UIKit
 
-class SearchRepoVC: UIViewController {
+class SearchRepoVC: ViewController<SearchRepoVM> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func makeUI() {
+    }
+    
+    override func bindViewModel() {
+        super.bindViewModel()
+        
+        let input = SearchRepoVM.Input()
+        viewModel.transform(input: input){ (output) in
+        }
     }
 }
 
