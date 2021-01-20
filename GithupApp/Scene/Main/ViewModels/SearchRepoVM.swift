@@ -7,11 +7,19 @@
 
 import Foundation
 
-class SearchRepoVM {
+class SearchRepoVM: ViewModelType {
 }
 
 // MARK: - VM I/O
 extension SearchRepoVM {
+    struct Input {
+    }
+    
+    struct Output {
+    }
+    
+    func transform(input: Input, output: @escaping(Output) -> ()) {
+    }
 }
 
 

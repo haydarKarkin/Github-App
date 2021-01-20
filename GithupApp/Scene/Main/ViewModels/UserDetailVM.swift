@@ -7,11 +7,19 @@
 
 import Foundation
 
-class UserDetailVM {
+class UserDetailVM: ViewModelType {
 }
 
 // MARK: - VM I/O
 extension UserDetailVM {
+    struct Input {
+    }
+    
+    struct Output {
+    }
+    
+    func transform(input: Input, output: @escaping(Output) -> ()) {
+    }
 }
 
 
