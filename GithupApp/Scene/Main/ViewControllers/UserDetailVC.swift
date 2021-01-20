@@ -24,3 +24,8 @@ class UserDetailVC: ViewController<UserDetailVM> {
         }
     }
 }
+
+// MARK: - Storyboarded
+extension UserDetailVC: Storyboarded {
+    static var storyboardName = StoryboardName.main
+}

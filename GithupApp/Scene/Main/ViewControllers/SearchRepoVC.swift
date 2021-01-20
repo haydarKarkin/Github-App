@@ -25,3 +25,7 @@ class SearchRepoVC: ViewController<SearchRepoVM> {
     }
 }
 
+// MARK: - Storyboarded
+extension SearchRepoVC: Storyboarded {
+    static var storyboardName = StoryboardName.main
+}

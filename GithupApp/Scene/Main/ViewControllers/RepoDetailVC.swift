@@ -24,3 +24,8 @@ class RepoDetailVC: ViewController<RepoDetailVM> {
         }
     }
 }
+
+// MARK: - Storyboarded
+extension RepoDetailVC: Storyboarded {
+    static var storyboardName = StoryboardName.main
+}
