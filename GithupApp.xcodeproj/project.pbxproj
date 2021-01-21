@@ -38,6 +38,9 @@
 		B0FE8BCD25B9D9E800CAF70D /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BCC25B9D9E800CAF70D /* Target.swift */; };
 		B0FE8BD525B9DA6000CAF70D /* ClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BD425B9DA6000CAF70D /* ClientProvider.swift */; };
 		B0FE8BDA25B9DA8D00CAF70D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BD925B9DA8D00CAF70D /* NetworkError.swift */; };
+		B0FE8BE325BA087100CAF70D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BE225BA087100CAF70D /* Reusable.swift */; };
+		B0FE8BEB25BA088600CAF70D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BEA25BA088600CAF70D /* String+Ext.swift */; };
+		B0FE8BF025BA089D00CAF70D /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BEF25BA089D00CAF70D /* UICollectionView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		B0FE8BCC25B9D9E800CAF70D /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
 		B0FE8BD425B9DA6000CAF70D /* ClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProvider.swift; sourceTree = "<group>"; };
 		B0FE8BD925B9DA8D00CAF70D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B0FE8BE225BA087100CAF70D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		B0FE8BEA25BA088600CAF70D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		B0FE8BEF25BA089D00CAF70D /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,7 @@
 		B0FE8B2125B8AD0700CAF70D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE8BE125BA086300CAF70D /* Extensions */,
 				B0FE8BCB25B9D9C400CAF70D /* Networking */,
 				B0FE8B8A25B8CE4E00CAF70D /* Config */,
 				B0FE8BA125B8D10C00CAF70D /* Coordinator */,
@@ -369,6 +376,16 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		B0FE8BE125BA086300CAF70D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8BE225BA087100CAF70D /* Reusable.swift */,
+				B0FE8BEA25BA088600CAF70D /* String+Ext.swift */,
+				B0FE8BEF25BA089D00CAF70D /* UICollectionView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,7 +527,9 @@
 				B0FE8BA825B8D14800CAF70D /* AppCoordinator.swift in Sources */,
 				B0FE8B7D25B8CD3A00CAF70D /* ViewModel.swift in Sources */,
 				B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */,
+				B0FE8BF025BA089D00CAF70D /* UICollectionView+Ext.swift in Sources */,
 				B0FE8B4C25B8AF3400CAF70D /* RepoDetailVM.swift in Sources */,
+				B0FE8BE325BA087100CAF70D /* Reusable.swift in Sources */,
 				B0FE8B8325B8CE0300CAF70D /* ViewController.swift in Sources */,
 				B0FE8B4625B8AF1C00CAF70D /* SearchRepoVM.swift in Sources */,
 				B0FE8B8C25B8CE5A00CAF70D /* Config.swift in Sources */,
@@ -520,6 +539,7 @@
 				B0FE8B3E25B8AF0800CAF70D /* UserDetailVM.swift in Sources */,
 				B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */,
 				B0FE8B5925B8B1D200CAF70D /* GithubCoordinator.swift in Sources */,
+				B0FE8BEB25BA088600CAF70D /* String+Ext.swift in Sources */,
 				B0FE8B6D25B8B84500CAF70D /* RepoModel.swift in Sources */,
 				B0FE8B9D25B8D02B00CAF70D /* Storyboarded.swift in Sources */,
 				B0FE8BDA25B9DA8D00CAF70D /* NetworkError.swift in Sources */,
