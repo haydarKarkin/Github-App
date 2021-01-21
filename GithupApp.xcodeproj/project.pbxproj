@@ -35,6 +35,9 @@
 		B0FE8BA825B8D14800CAF70D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BA725B8D14800CAF70D /* AppCoordinator.swift */; };
 		B0FE8BAE25B8D3F600CAF70D /* SharedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BAD25B8D3F600CAF70D /* SharedFactory.swift */; };
 		B0FE8BBE25B8DA6F00CAF70D /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BBD25B8DA6F00CAF70D /* Environment.swift */; };
+		B0FE8BCD25B9D9E800CAF70D /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BCC25B9D9E800CAF70D /* Target.swift */; };
+		B0FE8BD525B9DA6000CAF70D /* ClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BD425B9DA6000CAF70D /* ClientProvider.swift */; };
+		B0FE8BDA25B9DA8D00CAF70D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8BD925B9DA8D00CAF70D /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		B0FE8BB625B8D96700CAF70D /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		B0FE8BB725B8D97500CAF70D /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		B0FE8BBD25B8DA6F00CAF70D /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		B0FE8BCC25B9D9E800CAF70D /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		B0FE8BD425B9DA6000CAF70D /* ClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProvider.swift; sourceTree = "<group>"; };
+		B0FE8BD925B9DA8D00CAF70D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +186,7 @@
 		B0FE8B2125B8AD0700CAF70D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE8BCB25B9D9C400CAF70D /* Networking */,
 				B0FE8B8A25B8CE4E00CAF70D /* Config */,
 				B0FE8BA125B8D10C00CAF70D /* Coordinator */,
 				B0FE8BBB25B8DA4C00CAF70D /* Environment */,
@@ -352,6 +359,16 @@
 			path = Environment;
 			sourceTree = "<group>";
 		};
+		B0FE8BCB25B9D9C400CAF70D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8BD425B9DA6000CAF70D /* ClientProvider.swift */,
+				B0FE8BD925B9DA8D00CAF70D /* NetworkError.swift */,
+				B0FE8BCC25B9D9E800CAF70D /* Target.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,7 +504,9 @@
 				B0FE8AE325B8ABB400CAF70D /* SearchRepoVC.swift in Sources */,
 				B0FE8B5425B8AFDE00CAF70D /* GithubService.swift in Sources */,
 				B0FE8B5E25B8B1E000CAF70D /* GithubFactory.swift in Sources */,
+				B0FE8BD525B9DA6000CAF70D /* ClientProvider.swift in Sources */,
 				B0FE8B3425B8AE9200CAF70D /* RepoDetailVC.swift in Sources */,
+				B0FE8BCD25B9D9E800CAF70D /* Target.swift in Sources */,
 				B0FE8BA825B8D14800CAF70D /* AppCoordinator.swift in Sources */,
 				B0FE8B7D25B8CD3A00CAF70D /* ViewModel.swift in Sources */,
 				B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */,
@@ -503,6 +522,7 @@
 				B0FE8B5925B8B1D200CAF70D /* GithubCoordinator.swift in Sources */,
 				B0FE8B6D25B8B84500CAF70D /* RepoModel.swift in Sources */,
 				B0FE8B9D25B8D02B00CAF70D /* Storyboarded.swift in Sources */,
+				B0FE8BDA25B9DA8D00CAF70D /* NetworkError.swift in Sources */,
 				B0FE8B6325B8B58300CAF70D /* UserModel.swift in Sources */,
 				B0FE8BAE25B8D3F600CAF70D /* SharedFactory.swift in Sources */,
 			);
