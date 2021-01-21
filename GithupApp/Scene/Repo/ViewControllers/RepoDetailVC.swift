@@ -1,5 +1,5 @@
 //
-//  SearchRepoVC.swift
+//  RepoDetailVC.swift
 //  GithupApp
 //
 //  Created by Haydar Karkin on 20.01.2021.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SearchRepoVC: ViewController<SearchRepoVM> {
-
+class RepoDetailVC: ViewController<RepoDetailVM> {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,13 +19,13 @@ class SearchRepoVC: ViewController<SearchRepoVM> {
     override func bindViewModel() {
         super.bindViewModel()
         
-        let input = SearchRepoVM.Input()
+        let input = RepoDetailVM.Input()
         viewModel.transform(input: input){ (output) in
         }
     }
 }
 
 // MARK: - Storyboarded
-extension SearchRepoVC: Storyboarded {
-    static var storyboardName = StoryboardName.main
+extension RepoDetailVC: Storyboarded {
+    static var storyboardName = StoryboardName.repo
 }

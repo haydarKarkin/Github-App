@@ -1,5 +1,5 @@
 //
-//  GithubFactory.swift
+//  RepoFactory.swift
 //  GithupApp
 //
 //  Created by Haydar Karkin on 20.01.2021.
@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-protocol GithubFactoryType {
-    func makeGithubCoordinator(navigationController: UINavigationController) -> GithubCoordinatorType
-    func makeGithubService() -> GithubServiceType
+protocol RepoFactoryType {
+    func makeRepoCoordinator(navigationController: UINavigationController) -> RepoCoordinatorType
+    func makeRepoService() -> RepoServiceType
     func makeRepoDetailVM() -> RepoDetailVM
     func makeSearchRepoVM() -> SearchRepoVM
     func makeRepoDetailVC() -> RepoDetailVC
     func makeSearchRepoVC() -> SearchRepoVC
 }
 
-class GithubFactory: GithubFactoryType {
+class RepoFactory: RepoFactoryType {
     
     let sharedFactory: SharedFactoryType!
     
@@ -25,12 +25,12 @@ class GithubFactory: GithubFactoryType {
         self.sharedFactory = sharedFactory
     }
     
-    func makeGithubCoordinator(navigationController: UINavigationController) -> GithubCoordinatorType {
-        return GithubCoordinator(navigationController: navigationController, githubFactory: self)
+    func makeRepoCoordinator(navigationController: UINavigationController) -> RepoCoordinatorType {
+        return RepoCoordinator(navigationController: navigationController, githubFactory: self)
     }
     
-    func makeGithubService() -> GithubServiceType {
-        return GithubService()
+    func makeRepoService() -> RepoServiceType {
+        return RepoService()
     }
     
     func makeRepoDetailVM() -> RepoDetailVM {

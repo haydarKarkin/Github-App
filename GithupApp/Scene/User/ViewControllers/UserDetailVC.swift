@@ -27,5 +27,5 @@ class UserDetailVC: ViewController<UserDetailVM> {
 
 // MARK: - Storyboarded
 extension UserDetailVC: Storyboarded {
-    static var storyboardName = StoryboardName.main
+    static var storyboardName = StoryboardName.user
 }

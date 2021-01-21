@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */; };
 		B0FE8AE325B8ABB400CAF70D /* SearchRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8AE225B8ABB400CAF70D /* SearchRepoVC.swift */; };
-		B0FE8AE625B8ABB400CAF70D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8AE425B8ABB400CAF70D /* Main.storyboard */; };
+		B0FE8AE625B8ABB400CAF70D /* Repo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8AE425B8ABB400CAF70D /* Repo.storyboard */; };
 		B0FE8AE825B8ABB700CAF70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8AE725B8ABB700CAF70D /* Assets.xcassets */; };
 		B0FE8AEB25B8ABB700CAF70D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8AE925B8ABB700CAF70D /* LaunchScreen.storyboard */; };
 		B0FE8AF625B8ABB800CAF70D /* GithupAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8AF525B8ABB800CAF70D /* GithupAppTests.swift */; };
@@ -19,9 +19,9 @@
 		B0FE8B3E25B8AF0800CAF70D /* UserDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B3D25B8AF0800CAF70D /* UserDetailVM.swift */; };
 		B0FE8B4625B8AF1C00CAF70D /* SearchRepoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B4525B8AF1C00CAF70D /* SearchRepoVM.swift */; };
 		B0FE8B4C25B8AF3400CAF70D /* RepoDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B4B25B8AF3400CAF70D /* RepoDetailVM.swift */; };
-		B0FE8B5425B8AFDE00CAF70D /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5325B8AFDE00CAF70D /* GithubService.swift */; };
-		B0FE8B5925B8B1D200CAF70D /* GithubCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5825B8B1D200CAF70D /* GithubCoordinator.swift */; };
-		B0FE8B5E25B8B1E000CAF70D /* GithubFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5D25B8B1E000CAF70D /* GithubFactory.swift */; };
+		B0FE8B5425B8AFDE00CAF70D /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5325B8AFDE00CAF70D /* RepoService.swift */; };
+		B0FE8B5925B8B1D200CAF70D /* RepoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5825B8B1D200CAF70D /* RepoCoordinator.swift */; };
+		B0FE8B5E25B8B1E000CAF70D /* RepoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5D25B8B1E000CAF70D /* RepoFactory.swift */; };
 		B0FE8B6325B8B58300CAF70D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B6225B8B58300CAF70D /* UserModel.swift */; };
 		B0FE8B6825B8B73100CAF70D /* UserRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B6725B8B73100CAF70D /* UserRepoModel.swift */; };
 		B0FE8B6D25B8B84500CAF70D /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B6C25B8B84500CAF70D /* RepoModel.swift */; };
@@ -68,7 +68,7 @@
 		B0FE8ADB25B8ABB400CAF70D /* GithupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FE8AE225B8ABB400CAF70D /* SearchRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoVC.swift; sourceTree = "<group>"; };
-		B0FE8AE525B8ABB400CAF70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0FE8AE525B8ABB400CAF70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Repo.storyboard; sourceTree = "<group>"; };
 		B0FE8AE725B8ABB700CAF70D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0FE8AEA25B8ABB700CAF70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0FE8AEC25B8ABB700CAF70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,9 +83,9 @@
 		B0FE8B3D25B8AF0800CAF70D /* UserDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVM.swift; sourceTree = "<group>"; };
 		B0FE8B4525B8AF1C00CAF70D /* SearchRepoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoVM.swift; sourceTree = "<group>"; };
 		B0FE8B4B25B8AF3400CAF70D /* RepoDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailVM.swift; sourceTree = "<group>"; };
-		B0FE8B5325B8AFDE00CAF70D /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
-		B0FE8B5825B8B1D200CAF70D /* GithubCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubCoordinator.swift; sourceTree = "<group>"; };
-		B0FE8B5D25B8B1E000CAF70D /* GithubFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubFactory.swift; sourceTree = "<group>"; };
+		B0FE8B5325B8AFDE00CAF70D /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
+		B0FE8B5825B8B1D200CAF70D /* RepoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCoordinator.swift; sourceTree = "<group>"; };
+		B0FE8B5D25B8B1E000CAF70D /* RepoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoFactory.swift; sourceTree = "<group>"; };
 		B0FE8B6225B8B58300CAF70D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B0FE8B6725B8B73100CAF70D /* UserRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoModel.swift; sourceTree = "<group>"; };
 		B0FE8B6C25B8B84500CAF70D /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FE8BF725BA0F7400CAF70D /* User */,
-				B0FE8B2825B8AD6900CAF70D /* Main */,
+				B0FE8B2825B8AD6900CAF70D /* Repo */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 			path = SupportedFiles;
 			sourceTree = "<group>";
 		};
-		B0FE8B2825B8AD6900CAF70D /* Main */ = {
+		B0FE8B2825B8AD6900CAF70D /* Repo */ = {
 			isa = PBXGroup;
 			children = (
 				B0FE8B2C25B8AD9000CAF70D /* Coordinator */,
@@ -249,9 +249,9 @@
 				B0FE8B2925B8AD7300CAF70D /* ViewControllers */,
 				B0FE8B2A25B8AD7A00CAF70D /* ViewModels */,
 				B0FE8B2B25B8AD8200CAF70D /* Views */,
-				B0FE8AE425B8ABB400CAF70D /* Main.storyboard */,
+				B0FE8AE425B8ABB400CAF70D /* Repo.storyboard */,
 			);
-			path = Main;
+			path = Repo;
 			sourceTree = "<group>";
 		};
 		B0FE8B2925B8AD7300CAF70D /* ViewControllers */ = {
@@ -282,7 +282,7 @@
 		B0FE8B2C25B8AD9000CAF70D /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE8B5825B8B1D200CAF70D /* GithubCoordinator.swift */,
+				B0FE8B5825B8B1D200CAF70D /* RepoCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 		B0FE8B2E25B8ADA100CAF70D /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE8B5D25B8B1E000CAF70D /* GithubFactory.swift */,
+				B0FE8B5D25B8B1E000CAF70D /* RepoFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 		B0FE8B2F25B8ADBB00CAF70D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE8B5325B8AFDE00CAF70D /* GithubService.swift */,
+				B0FE8B5325B8AFDE00CAF70D /* RepoService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -568,7 +568,7 @@
 				B0FE8AEB25B8ABB700CAF70D /* LaunchScreen.storyboard in Resources */,
 				B0FE8C0025BA0FE200CAF70D /* User.storyboard in Resources */,
 				B0FE8AE825B8ABB700CAF70D /* Assets.xcassets in Resources */,
-				B0FE8AE625B8ABB400CAF70D /* Main.storyboard in Resources */,
+				B0FE8AE625B8ABB400CAF70D /* Repo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,8 +596,8 @@
 				B0FE8B3925B8AED400CAF70D /* UserDetailVC.swift in Sources */,
 				B0FE8B7225B8B89600CAF70D /* OwnerModel.swift in Sources */,
 				B0FE8AE325B8ABB400CAF70D /* SearchRepoVC.swift in Sources */,
-				B0FE8B5425B8AFDE00CAF70D /* GithubService.swift in Sources */,
-				B0FE8B5E25B8B1E000CAF70D /* GithubFactory.swift in Sources */,
+				B0FE8B5425B8AFDE00CAF70D /* RepoService.swift in Sources */,
+				B0FE8B5E25B8B1E000CAF70D /* RepoFactory.swift in Sources */,
 				B0FE8BD525B9DA6000CAF70D /* ClientProvider.swift in Sources */,
 				B0FE8B3425B8AE9200CAF70D /* RepoDetailVC.swift in Sources */,
 				B0FE8BCD25B9D9E800CAF70D /* Target.swift in Sources */,
@@ -618,7 +618,7 @@
 				B0FE8B6825B8B73100CAF70D /* UserRepoModel.swift in Sources */,
 				B0FE8B3E25B8AF0800CAF70D /* UserDetailVM.swift in Sources */,
 				B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */,
-				B0FE8B5925B8B1D200CAF70D /* GithubCoordinator.swift in Sources */,
+				B0FE8B5925B8B1D200CAF70D /* RepoCoordinator.swift in Sources */,
 				B0FE8BEB25BA088600CAF70D /* String+Ext.swift in Sources */,
 				B0FE8B6D25B8B84500CAF70D /* RepoModel.swift in Sources */,
 				B0FE8B9D25B8D02B00CAF70D /* Storyboarded.swift in Sources */,
@@ -660,12 +660,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B0FE8AE425B8ABB400CAF70D /* Main.storyboard */ = {
+		B0FE8AE425B8ABB400CAF70D /* Repo.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B0FE8AE525B8ABB400CAF70D /* Base */,
 			);
-			name = Main.storyboard;
+			name = Repo.storyboard;
 			sourceTree = "<group>";
 		};
 		B0FE8AE925B8ABB700CAF70D /* LaunchScreen.storyboard */ = {

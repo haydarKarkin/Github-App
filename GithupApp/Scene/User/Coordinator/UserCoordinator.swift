@@ -21,7 +21,7 @@ class UserCoordinator: UserCoordinatorType {
     }
     
     func start() {
-        let viewController = userFactory.makeUserDetailVC()
-        navigationController.pushViewController(viewController, animated: false)
+        let coordinator = userFactory.makeUserCoordinator(navigationController: navigationController)
+        coordinate(to: coordinator)
     }
 }

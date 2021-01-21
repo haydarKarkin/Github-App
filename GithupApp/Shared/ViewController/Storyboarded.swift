@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 enum StoryboardName: String {
-    case main = "Main"
+    case repo = "Repo"
+    case user = "User"
 }
 
 protocol Storyboarded {

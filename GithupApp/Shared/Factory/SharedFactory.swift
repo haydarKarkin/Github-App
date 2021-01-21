@@ -8,11 +8,16 @@
 import UIKit
 
 protocol SharedFactoryType {
-    func makeGithubFactory() -> GithubFactoryType
+    func makeRepoFactory() -> RepoFactoryType
+    func makeUserFactory() -> UserFactoryType
 }
 
 class SharedFactory: SharedFactoryType {
-    func makeGithubFactory() -> GithubFactoryType {
-        return GithubFactory(sharedFactory: self)
+    func makeRepoFactory() -> RepoFactoryType {
+        return RepoFactory(sharedFactory: self)
+    }
+    
+    func makeUserFactory() -> UserFactoryType {
+        return UserFactory(sharedFactory: self)
     }
 }

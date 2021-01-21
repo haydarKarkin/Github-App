@@ -1,5 +1,5 @@
 //
-//  GithubCoordinator.swift
+//  RepoCoordinator.swift
 //  GithupApp
 //
 //  Created by Haydar Karkin on 20.01.2021.
@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-protocol GithubCoordinatorType: Coordinator {
+protocol RepoCoordinatorType: Coordinator {
     func goToUserDetailScene()
     func goToRepoDetailScene()
 }
 
-class GithubCoordinator: GithubCoordinatorType {
+class RepoCoordinator: RepoCoordinatorType {
     private let navigationController: UINavigationController
-    private let githubFactory: GithubFactoryType
+    private let githubFactory: RepoFactoryType
     
-    init(navigationController: UINavigationController, githubFactory: GithubFactoryType) {
+    init(navigationController: UINavigationController, githubFactory: RepoFactoryType) {
         self.navigationController = navigationController
         self.githubFactory = githubFactory
     }

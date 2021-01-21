@@ -23,8 +23,8 @@ class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
         
         let coordinator = sharedFactory
-            .makeGithubFactory()
-            .makeGithubCoordinator(navigationController: navigationController)
+            .makeRepoFactory()
+            .makeRepoCoordinator(navigationController: navigationController)
         coordinate(to: coordinator)
     }
 }
