@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="81" y="94"/>
         </scene>
-        <!--View Controller-->
+        <!--Repo DetailVC-->
         <scene sceneID="cp7-d6-aRC">
             <objects>
-                <viewController id="8Lx-JB-3pL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RepoDetailVC" id="8Lx-JB-3pL" customClass="RepoDetailVC" customModule="GithupApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KQP-nF-LYz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,21 +38,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73V-M1-MHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="896" y="94"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YSs-3F-Sjm">
-            <objects>
-                <viewController id="5Nw-SM-S70" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xTN-wu-wdw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vg5-If-BhU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Nq-Sf-oeq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1664" y="94"/>
         </scene>
     </scenes>
     <resources>

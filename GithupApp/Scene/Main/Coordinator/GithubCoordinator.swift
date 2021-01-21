@@ -28,8 +28,7 @@ class GithubCoordinator: GithubCoordinatorType {
     }
     
     func goToUserDetailScene() {
-        let viewController = githubFactory.makeUserDetailVC()
-        navigationController.pushViewController(viewController, animated: false)
+        // TODO: - Coordinate to user coordinator
     }
     
     func goToRepoDetailScene() {

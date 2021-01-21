@@ -13,10 +13,8 @@ protocol GithubFactoryType {
     func makeGithubService() -> GithubServiceType
     func makeRepoDetailVM() -> RepoDetailVM
     func makeSearchRepoVM() -> SearchRepoVM
-    func makeUserDetailVM() -> UserDetailVM
     func makeRepoDetailVC() -> RepoDetailVC
     func makeSearchRepoVC() -> SearchRepoVC
-    func makeUserDetailVC() -> UserDetailVC
 }
 
 class GithubFactory: GithubFactoryType {
@@ -43,10 +41,6 @@ class GithubFactory: GithubFactoryType {
         return SearchRepoVM()
     }
     
-    func makeUserDetailVM() -> UserDetailVM {
-        return UserDetailVM()
-    }
-    
     func makeRepoDetailVC() -> RepoDetailVC {
         let viewController = RepoDetailVC.instantiate()
         viewController.viewModel = makeRepoDetailVM()
@@ -56,12 +50,6 @@ class GithubFactory: GithubFactoryType {
     func makeSearchRepoVC() -> SearchRepoVC {
         let viewController = SearchRepoVC.instantiate()
         viewController.viewModel = makeSearchRepoVM()
-        return viewController
-    }
-    
-    func makeUserDetailVC() -> UserDetailVC {
-        let viewController = UserDetailVC.instantiate()
-        viewController.viewModel = makeUserDetailVM()
         return viewController
     }
 }
