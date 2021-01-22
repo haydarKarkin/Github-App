@@ -45,6 +45,9 @@
 		B0FE8C0525BA103100CAF70D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8C0425BA103100CAF70D /* UserService.swift */; };
 		B0FE8C0D25BA106A00CAF70D /* UserFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8C0C25BA106A00CAF70D /* UserFactory.swift */; };
 		B0FE8C1225BA107500CAF70D /* UserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8C1125BA107500CAF70D /* UserCoordinator.swift */; };
+		B0FE8C2C25BB73A800CAF70D /* SearchRepoResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8C2B25BB73A800CAF70D /* SearchRepoResponse.json */; };
+		B0FE8C3425BB73D300CAF70D /* UserProfileResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8C3325BB73D300CAF70D /* UserProfileResponse.json */; };
+		B0FE8C3925BB73F700CAF70D /* UserReposResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8C3825BB73F700CAF70D /* UserReposResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		B0FE8C0425BA103100CAF70D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		B0FE8C0C25BA106A00CAF70D /* UserFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFactory.swift; sourceTree = "<group>"; };
 		B0FE8C1125BA107500CAF70D /* UserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoordinator.swift; sourceTree = "<group>"; };
+		B0FE8C2B25BB73A800CAF70D /* SearchRepoResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchRepoResponse.json; sourceTree = "<group>"; };
+		B0FE8C3325BB73D300CAF70D /* UserProfileResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserProfileResponse.json; sourceTree = "<group>"; };
+		B0FE8C3825BB73F700CAF70D /* UserReposResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserReposResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,7 @@
 		B0FE8B2325B8AD1300CAF70D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE8C2A25BB735500CAF70D /* StubbedData */,
 				B0FE8BB525B8D94600CAF70D /* Configuration */,
 				B0FE8AE725B8ABB700CAF70D /* Assets.xcassets */,
 			);
@@ -462,6 +469,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B0FE8C2A25BB735500CAF70D /* StubbedData */ = {
+			isa = PBXGroup;
+			children = (
+				B0FE8C2B25BB73A800CAF70D /* SearchRepoResponse.json */,
+				B0FE8C3325BB73D300CAF70D /* UserProfileResponse.json */,
+				B0FE8C3825BB73F700CAF70D /* UserReposResponse.json */,
+			);
+			path = StubbedData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -567,8 +584,11 @@
 			files = (
 				B0FE8AEB25B8ABB700CAF70D /* LaunchScreen.storyboard in Resources */,
 				B0FE8C0025BA0FE200CAF70D /* User.storyboard in Resources */,
+				B0FE8C3925BB73F700CAF70D /* UserReposResponse.json in Resources */,
 				B0FE8AE825B8ABB700CAF70D /* Assets.xcassets in Resources */,
 				B0FE8AE625B8ABB400CAF70D /* Repo.storyboard in Resources */,
+				B0FE8C2C25BB73A800CAF70D /* SearchRepoResponse.json in Resources */,
+				B0FE8C3425BB73D300CAF70D /* UserProfileResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
