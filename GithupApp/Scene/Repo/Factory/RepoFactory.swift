@@ -11,9 +11,9 @@ import UIKit
 protocol RepoFactoryType {
     func makeRepoCoordinator(navigationController: UINavigationController) -> RepoCoordinatorType
     func makeRepoService() -> RepoServiceType
-    func makeRepoDetailVM() -> RepoDetailVM
-    func makeSearchRepoVM() -> SearchRepoVM
-    func makeRepoDetailVC() -> RepoDetailVC
+    func makeRepoDetailVM(repoModel: RepoModel) -> RepoDetailVM
+    func makeSearchRepoVM(repoService: RepoServiceType) -> SearchRepoVM
+    func makeRepoDetailVC(repoModel: RepoModel) -> RepoDetailVC
     func makeSearchRepoVC() -> SearchRepoVC
 }
 
@@ -34,23 +34,24 @@ class RepoFactory: RepoFactoryType {
         return RepoService(provider: clientProvider)
     }
     
-    func makeRepoDetailVM() -> RepoDetailVM {
-        return RepoDetailVM()
+    func makeRepoDetailVM(repoModel: RepoModel) -> RepoDetailVM {
+        return RepoDetailVM(repoModel: repoModel)
     }
     
-    func makeSearchRepoVM() -> SearchRepoVM {
-        return SearchRepoVM()
+    func makeSearchRepoVM(repoService: RepoServiceType) -> SearchRepoVM {
+        return SearchRepoVM(repoService: repoService)
     }
     
-    func makeRepoDetailVC() -> RepoDetailVC {
+    func makeRepoDetailVC(repoModel: RepoModel) -> RepoDetailVC {
         let viewController = RepoDetailVC.instantiate()
-        viewController.viewModel = makeRepoDetailVM()
+        viewController.viewModel = makeRepoDetailVM(repoModel: repoModel)
         return viewController
     }
     
     func makeSearchRepoVC() -> SearchRepoVC {
+        let service: RepoServiceType = makeRepoService()
         let viewController = SearchRepoVC.instantiate()
-        viewController.viewModel = makeSearchRepoVM()
+        viewController.viewModel = makeSearchRepoVM(repoService: service)
         return viewController
     }
 }

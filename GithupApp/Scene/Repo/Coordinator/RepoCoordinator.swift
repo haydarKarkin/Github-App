@@ -10,7 +10,7 @@ import UIKit
 
 protocol RepoCoordinatorType: Coordinator {
     func goToUserDetailScene()
-    func goToRepoDetailScene()
+    func goToRepoDetailScene(repoModel: RepoModel)
 }
 
 class RepoCoordinator: RepoCoordinatorType {
@@ -31,8 +31,8 @@ class RepoCoordinator: RepoCoordinatorType {
         // TODO: - Coordinate to user coordinator
     }
     
-    func goToRepoDetailScene() {
-        let viewController = githubFactory.makeRepoDetailVC()
+    func goToRepoDetailScene(repoModel: RepoModel) {
+        let viewController = githubFactory.makeRepoDetailVC(repoModel: repoModel)
         navigationController.pushViewController(viewController, animated: false)
     }
 }

@@ -9,6 +9,9 @@ import UIKit
 
 class RepoDetailVC: ViewController<RepoDetailVM> {
     
+    // VM Binders
+    var openUserDetailClosure:(() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,8 +22,14 @@ class RepoDetailVC: ViewController<RepoDetailVM> {
     override func bindViewModel() {
         super.bindViewModel()
         
-        let input = RepoDetailVM.Input()
+        let repoDetailClosure: ((RepoModel) -> Void)? = { [weak self] (result) in
+            // TODO: - Update UI elements that are related with Repo
+        }
+        
+        let input = RepoDetailVM.Input(repoDetail: repoDetailClosure)
+        
         viewModel.transform(input: input){ (output) in
+            self.openUserDetailClosure = output.openUserDetail
         }
     }
 }
