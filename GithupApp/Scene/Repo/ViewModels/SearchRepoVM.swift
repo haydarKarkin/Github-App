@@ -94,6 +94,10 @@ extension SearchRepoVM {
     }
     
     func goToUserDetail(with repo: RepoModel) {
-        repoCoordinator.goToUserDetailScene()
+        if let owner = repo.owner {
+            repoCoordinator.goToUserDetailScene(owner: owner)
+        } else {            
+            onErrorHandling?(NetworkError.noOwner)
+        }
     }
 }

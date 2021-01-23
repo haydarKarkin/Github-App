@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol RepoCoordinatorType: Coordinator {
-    func goToUserDetailScene()
+    func goToUserDetailScene(owner: OwnerModel)
     func goToRepoDetailScene(repoModel: RepoModel)
 }
 
@@ -29,10 +29,10 @@ class RepoCoordinator: RepoCoordinatorType {
         navigationController.pushViewController(viewController, animated: false)
     }
     
-    func goToUserDetailScene() {
+    func goToUserDetailScene(owner: OwnerModel) {
         let userCoordinator = sharedFactory
             .makeUserFactory()
-            .makeUserCoordinator(navigationController: navigationController)
+            .makeUserCoordinator(navigationController: navigationController, owner: owner)
         coordinate(to: userCoordinator)
     }
     

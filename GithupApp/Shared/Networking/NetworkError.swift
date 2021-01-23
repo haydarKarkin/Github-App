@@ -13,4 +13,5 @@ public enum NetworkError : String, Error {
     case missingURL = "URL is nil."
     case decodingFailed = "Can't read received data."
     case noNetwork = "Check your internet connection"
+    case noOwner = "Could't find owner of the repo."
 }

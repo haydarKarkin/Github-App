@@ -10,11 +10,11 @@ import Foundation
 class UserDetailVM: ViewModelType {
     
     private let userService: UserServiceType!
-    private let userName: String!
+    private let owner: OwnerModel!
     
-    init(userService: UserServiceType, userName: String) {
+    init(userService: UserServiceType, owner: OwnerModel) {
         self.userService = userService
-        self.userName = userName
+        self.owner = owner
     }
 }
 
@@ -50,7 +50,7 @@ extension UserDetailVM {
     
     func getUserInfo(completion: ((UserModel) -> Void)?) {
         self.onLoadHandling?(true)
-        userService.getUser(name: userName) { result in
+        userService.getUser(name: owner.login!) { result in
             self.onLoadHandling?(false)
             switch result {
                 case .success(let userInfo):
@@ -63,7 +63,7 @@ extension UserDetailVM {
     
     func getUserRepos(completion: (([RepoModel]) -> Void)?) {
         self.onLoadHandling?(true)
-        userService.getUserRepos(name: userName) { result in
+        userService.getUserRepos(name: owner.login!) { result in
             self.onLoadHandling?(false)
             switch result {
                 case .success(let userRepos):

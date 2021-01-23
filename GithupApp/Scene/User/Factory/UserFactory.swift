@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 protocol UserFactoryType {
-    func makeUserCoordinator(navigationController: UINavigationController) -> UserCoordinatorType
+    func makeUserCoordinator(navigationController: UINavigationController, owner: OwnerModel) -> UserCoordinatorType
     func makeUserService() -> UserServiceType
-    func makeUserDetailVM(userService: UserServiceType, userName: String) -> UserDetailVM
-    func makeUserDetailVC(userName: String) -> UserDetailVC
+    func makeUserDetailVM(userService: UserServiceType, owner: OwnerModel) -> UserDetailVM
+    func makeUserDetailVC(owner: OwnerModel) -> UserDetailVC
 }
 
 class UserFactory: UserFactoryType {
@@ -23,8 +23,8 @@ class UserFactory: UserFactoryType {
         self.sharedFactory = sharedFactory
     }
     
-    func makeUserCoordinator(navigationController: UINavigationController) -> UserCoordinatorType {
-        return UserCoordinator(navigationController: navigationController, userFactory: self)
+    func makeUserCoordinator(navigationController: UINavigationController, owner: OwnerModel) -> UserCoordinatorType {
+        return UserCoordinator(navigationController: navigationController, userFactory: self, owner: owner)
     }
     
     func makeUserService() -> UserServiceType {
@@ -32,14 +32,14 @@ class UserFactory: UserFactoryType {
         return UserService(provider: clientProvider)
     }
     
-    func makeUserDetailVM(userService: UserServiceType, userName: String) -> UserDetailVM {
-        return UserDetailVM(userService: userService, userName: userName)
+    func makeUserDetailVM(userService: UserServiceType, owner: OwnerModel) -> UserDetailVM {
+        return UserDetailVM(userService: userService, owner: owner)
     }
     
-    func makeUserDetailVC(userName: String) -> UserDetailVC {
+    func makeUserDetailVC(owner: OwnerModel) -> UserDetailVC {
         let service: UserServiceType = makeUserService()
         let viewController = UserDetailVC.instantiate()
-        viewController.viewModel = makeUserDetailVM(userService: service, userName: userName)
+        viewController.viewModel = makeUserDetailVM(userService: service, owner: owner)
         return viewController
     }
 }
