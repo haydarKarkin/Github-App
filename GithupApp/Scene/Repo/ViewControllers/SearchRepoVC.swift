@@ -41,7 +41,7 @@ class SearchRepoVC: ViewController<SearchRepoVM> {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = Configs.UI.estimatedRowHeight
+        tableView.rowHeight = Configs.UI.estimatedRowHeight
         tableView.registerCellNib(RepoCell.self)
     }
     
