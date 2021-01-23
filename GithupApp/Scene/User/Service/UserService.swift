@@ -9,7 +9,7 @@ import Foundation
 
 protocol UserServiceType {
     func getUser(name: String, completion: @escaping(Result<UserModel, Error>) -> ())
-    func getUserRepo(name: String, completion: @escaping(Result<[RepoModel], Error>) -> ())
+    func getUserRepos(name: String, completion: @escaping(Result<[RepoModel], Error>) -> ())
 }
 
 class UserService: UserServiceType {
@@ -32,7 +32,7 @@ class UserService: UserServiceType {
         }
     }
     
-    func getUserRepo(name: String, completion: @escaping(Result<[RepoModel], Error>) -> ()) {
+    func getUserRepos(name: String, completion: @escaping(Result<[RepoModel], Error>) -> ()) {
         provider.request(target: .user(name: name), responseType: [RepoModel].self) { result in
             switch result {
                 case .success(let resp):

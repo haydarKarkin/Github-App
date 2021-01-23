@@ -9,6 +9,13 @@ import UIKit
 
 class UserDetailVC: ViewController<UserDetailVM> {
     
+    // VM Binders
+    var getUserClosure: (() -> Void)?
+    var getReposClosure: (() -> Void)?
+    
+    // Variables
+    var repos: [RepoModel] = [RepoModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,9 +26,24 @@ class UserDetailVC: ViewController<UserDetailVM> {
     override func bindViewModel() {
         super.bindViewModel()
         
-        let input = UserDetailVM.Input()
-        viewModel.transform(input: input){ (output) in
+        let userInfoClosure: ((UserModel) -> Void)? = { [weak self] (result) in
+            // TODO: - Update UI elements that are related with User
         }
+        
+        let reposClosure: (([RepoModel]) -> Void)? = { [weak self] (result) in
+            // TODO: - Update UI elements that are related with User's Repos
+        }
+        
+        let input = UserDetailVM.Input(user: userInfoClosure, repos: reposClosure)
+        
+        viewModel.transform(input: input){ (output) in
+            self.getUserClosure = output.getUser
+            self.getReposClosure = output.getRepos
+        }
+        
+        // Load user's info and repos
+        getUserClosure?()
+        getReposClosure?()
     }
 }
 

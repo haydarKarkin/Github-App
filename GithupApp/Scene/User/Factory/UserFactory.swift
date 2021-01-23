@@ -11,8 +11,8 @@ import UIKit
 protocol UserFactoryType {
     func makeUserCoordinator(navigationController: UINavigationController) -> UserCoordinatorType
     func makeUserService() -> UserServiceType
-    func makeUserDetailVM() -> UserDetailVM
-    func makeUserDetailVC() -> UserDetailVC
+    func makeUserDetailVM(userService: UserServiceType, userName: String) -> UserDetailVM
+    func makeUserDetailVC(userName: String) -> UserDetailVC
 }
 
 class UserFactory: UserFactoryType {
@@ -32,13 +32,14 @@ class UserFactory: UserFactoryType {
         return UserService(provider: clientProvider)
     }
     
-    func makeUserDetailVM() -> UserDetailVM {
-        return UserDetailVM()
+    func makeUserDetailVM(userService: UserServiceType, userName: String) -> UserDetailVM {
+        return UserDetailVM(userService: userService, userName: userName)
     }
     
-    func makeUserDetailVC() -> UserDetailVC {
+    func makeUserDetailVC(userName: String) -> UserDetailVC {
+        let service: UserServiceType = makeUserService()
         let viewController = UserDetailVC.instantiate()
-        viewController.viewModel = makeUserDetailVM()
+        viewController.viewModel = makeUserDetailVM(userService: service, userName: userName)
         return viewController
     }
 }
