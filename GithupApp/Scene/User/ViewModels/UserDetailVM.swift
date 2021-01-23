@@ -9,6 +9,9 @@ import Foundation
 
 class UserDetailVM: ViewModelType {
     
+    private var currentPage: Int = 1
+    private var repos: [RepoModel] = [RepoModel]()
+    
     private let userService: UserServiceType!
     private let owner: OwnerModel!
     
@@ -28,6 +31,7 @@ extension UserDetailVM {
     struct Output {
         let getUser: (() -> Void)?
         let getRepos: (() -> Void)?
+        var next: (() -> Void)?
     }
     
     func transform(input: Input, output: @escaping(Output) -> ()) {
@@ -40,7 +44,11 @@ extension UserDetailVM {
             self.getUserRepos(completion: input.repos)
         }
         
-        output(Output(getUser: getUser, getRepos: getRepos))
+        let next: (() -> Void)? = {
+            self.nextPage(completion: input.repos)
+        }
+        
+        output(Output(getUser: getUser, getRepos: getRepos, next: next))
     }
 }
 
@@ -61,16 +69,24 @@ extension UserDetailVM {
         }
     }
     
-    func getUserRepos(completion: (([RepoModel]) -> Void)?) {
+    func getUserRepos(page: Int = 1, completion: (([RepoModel]) -> Void)?) {
         self.onLoadHandling?(true)
-        userService.getUserRepos(name: owner.login!) { result in
+        
+        currentPage = page
+        userService.getUserRepos(name: owner.login!, page: page) { result in
             self.onLoadHandling?(false)
             switch result {
                 case .success(let userRepos):
-                    completion?(userRepos)
+                    self.repos = self.repos + userRepos
+                    completion?(self.repos)
                 case .failure(let error):
                     self.onErrorHandling?(error)
             }
         }
+    }
+    
+    func nextPage(completion: (([RepoModel]) -> Void)?) {
+        let nextPage = currentPage + 1
+        getUserRepos(page: nextPage, completion: completion)
     }
 }

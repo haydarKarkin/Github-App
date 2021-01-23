@@ -9,7 +9,7 @@ import Foundation
 
 enum UserAPI {
     case user(name: String)
-    case userRepos(name: String)
+    case userRepos(name: String, perPage: Int, page: Int)
 }
 
 extension UserAPI: TargetType {
@@ -21,13 +21,23 @@ extension UserAPI: TargetType {
         switch self {
             case .user(let name):
                 return "/users/\(name)"
-            case .userRepos(let name):
+            case .userRepos(let name, _, _):
                 return "/users/\(name)/repos"
         }
     }
     
     var parameters: [String: Any]? {
-        return [:]
+        
+        var params: [String: Any] = [:]
+        
+        switch self {
+            case .userRepos(_, let perPage, let page):
+                params["per_page"] = perPage
+                params["page"] = page
+            default:
+                break
+        }
+        return params
     }
     
     var method: TargetMethod {
