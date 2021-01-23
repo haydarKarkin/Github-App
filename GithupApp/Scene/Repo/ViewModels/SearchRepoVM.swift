@@ -62,8 +62,13 @@ extension SearchRepoVM {
     func search(query: String, page: Int = 1, completion: (([RepoModel]) -> Void)?) {
         self.onLoadHandling?(true)
         
+        if searchQuery != query {
+            repos = []
+        }
+        
         searchQuery = query
         currentPage = page
+        
         repoService.search(query: query, page: page) { result in
             self.onLoadHandling?(false)
             switch result {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B078157725BCC59700C7217E /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078157625BCC59700C7217E /* Debounce.swift */; };
 		B0974D1D25BC9041004BB6E8 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974D1B25BC9041004BB6E8 /* RepoCell.swift */; };
 		B0974D1E25BC9041004BB6E8 /* RepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0974D1C25BC9041004BB6E8 /* RepoCell.xib */; };
 		B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B078157625BCC59700C7217E /* Debounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 		B0974D1B25BC9041004BB6E8 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		B0974D1C25BC9041004BB6E8 /* RepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCell.xib; sourceTree = "<group>"; };
 		B0FE8ADB25B8ABB400CAF70D /* GithupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B078157525BCC58600C7217E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B078157625BCC59700C7217E /* Debounce.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		B0FE8AD225B8ABB300CAF70D = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +224,7 @@
 		B0FE8B2125B8AD0700CAF70D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B078157525BCC58600C7217E /* Utilities */,
 				B0FE8B8A25B8CE4E00CAF70D /* Config */,
 				B0FE8BA125B8D10C00CAF70D /* Coordinator */,
 				B0FE8BBB25B8DA4C00CAF70D /* Environment */,
@@ -636,6 +647,7 @@
 				B0FE8B3425B8AE9200CAF70D /* RepoDetailVC.swift in Sources */,
 				B0FE8BCD25B9D9E800CAF70D /* Target.swift in Sources */,
 				B0FE8C0525BA103100CAF70D /* UserService.swift in Sources */,
+				B078157725BCC59700C7217E /* Debounce.swift in Sources */,
 				B0FE8BA825B8D14800CAF70D /* AppCoordinator.swift in Sources */,
 				B0FE8B7D25B8CD3A00CAF70D /* ViewModel.swift in Sources */,
 				B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */,

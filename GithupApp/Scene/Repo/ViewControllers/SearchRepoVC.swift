@@ -31,7 +31,13 @@ class SearchRepoVC: ViewController<SearchRepoVM> {
     }
     
     override func makeUI() {
+        // setup searchcontroller
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = Configs.Text.searchPlaceHolder
+        navigationItem.searchController = searchController
         
+        // setup tableviewe
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -88,8 +94,19 @@ extension SearchRepoVC: UITableViewDelegate {
         
         let isReachedBottom = indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
         
-        if isReachedBottom && !searchController.isActive {
+        if isReachedBottom {
             nextClosure?()
+        }
+    }
+}
+
+// MARK: - UISearchBarDelegatea
+extension SearchRepoVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        Debounce<String>.input(searchText, comparedAgainst: searchBar.text ?? "") { text in
+            if text.count >= Configs.Network.minCharForSearch {
+                self.searchClosure?(text)
+            }            
         }
     }
 }

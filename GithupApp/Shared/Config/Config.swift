@@ -12,6 +12,7 @@ struct Configs {
     struct Text {
         static let globalErrorTitle = "There is a problem!"
         static let globalErrorDesc = "Please try again later."
+        static let searchPlaceHolder = "Type repo name here to search repos"
     }
     
     struct UI {
@@ -25,5 +26,6 @@ struct Configs {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
             return dateFormatter
         }()
+        static let minCharForSearch: Int = 3
     }
 }
