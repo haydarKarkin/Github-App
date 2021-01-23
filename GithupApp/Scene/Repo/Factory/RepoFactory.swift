@@ -26,7 +26,7 @@ class RepoFactory: RepoFactoryType {
     }
     
     func makeRepoCoordinator(navigationController: UINavigationController) -> RepoCoordinatorType {
-        return RepoCoordinator(navigationController: navigationController, repoFactoryType: self)
+        return RepoCoordinator(navigationController: navigationController, repoFactory: self, sharedFactory: sharedFactory)
     }
     
     func makeRepoService() -> RepoServiceType {

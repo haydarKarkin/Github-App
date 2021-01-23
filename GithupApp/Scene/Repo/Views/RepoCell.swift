@@ -18,12 +18,13 @@ class RepoCell: UITableViewCell, Reusable {
     var openUserDetailClosure: ((RepoModel) -> Void)?
     
     // Variables
-    var model: RepoModel?
+    var repoModel: RepoModel?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleAvatarTap(_:)))
+        avatarImageView.isUserInteractionEnabled = true
         avatarImageView.addGestureRecognizer(tap)
     }
 
@@ -34,6 +35,7 @@ class RepoCell: UITableViewCell, Reusable {
     }
     
     func configure(with model: RepoModel, openUserDetail: ((RepoModel) -> Void)?) {
+        repoModel = model
         repoNameLabel.text = model.fullName
         userNameLabel.text = model.owner?.login
         avatarImageView.downloadImageFrom(link: model.owner?.avatarURL)
@@ -42,7 +44,7 @@ class RepoCell: UITableViewCell, Reusable {
     }
     
     @objc func handleAvatarTap(_ sender: UITapGestureRecognizer) {
-        if let repo = model {
+        if let repo = repoModel {
             openUserDetailClosure?(repo)
         }
     }

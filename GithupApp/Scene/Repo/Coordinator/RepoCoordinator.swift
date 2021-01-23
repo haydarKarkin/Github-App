@@ -15,24 +15,29 @@ protocol RepoCoordinatorType: Coordinator {
 
 class RepoCoordinator: RepoCoordinatorType {
     private let navigationController: UINavigationController
-    private let repoFactoryType: RepoFactoryType
+    private let repoFactory: RepoFactoryType
+    private let sharedFactory: SharedFactoryType
     
-    init(navigationController: UINavigationController, repoFactoryType: RepoFactoryType) {
+    init(navigationController: UINavigationController, repoFactory: RepoFactoryType, sharedFactory: SharedFactoryType) {
         self.navigationController = navigationController
-        self.repoFactoryType = repoFactoryType
+        self.repoFactory = repoFactory
+        self.sharedFactory = sharedFactory
     }
     
     func start() {
-        let viewController = repoFactoryType.makeSearchRepoVC(repoCoordinator: self)
+        let viewController = repoFactory.makeSearchRepoVC(repoCoordinator: self)
         navigationController.pushViewController(viewController, animated: false)
     }
     
     func goToUserDetailScene() {
-        // TODO: - Coordinate to user coordinator
+        let userCoordinator = sharedFactory
+            .makeUserFactory()
+            .makeUserCoordinator(navigationController: navigationController)
+        coordinate(to: userCoordinator)
     }
     
     func goToRepoDetailScene(repoModel: RepoModel) {
-        let viewController = repoFactoryType.makeRepoDetailVC(repoModel: repoModel)
+        let viewController = repoFactory.makeRepoDetailVC(repoModel: repoModel)
         navigationController.pushViewController(viewController, animated: false)
     }
 }

@@ -94,6 +94,6 @@ extension SearchRepoVM {
     }
     
     func goToUserDetail(with repo: RepoModel) {
-        // TODO: - Open user detail scene
+        repoCoordinator.goToUserDetailScene()
     }
 }
