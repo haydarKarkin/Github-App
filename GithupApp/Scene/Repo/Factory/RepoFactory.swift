@@ -30,7 +30,8 @@ class RepoFactory: RepoFactoryType {
     }
     
     func makeRepoService() -> RepoServiceType {
-        return RepoService()
+        let clientProvider: ClientProvider<RepoAPI> = sharedFactory.makeClientProvider()
+        return RepoService(provider: clientProvider)
     }
     
     func makeRepoDetailVM() -> RepoDetailVM {
