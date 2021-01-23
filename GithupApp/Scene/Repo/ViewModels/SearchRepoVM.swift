@@ -9,14 +9,16 @@ import Foundation
 
 class SearchRepoVM: ViewModelType {
     
-    var searchQuery: String = ""
-    var currentPage: Int = 1
-    var repos: [RepoModel] = [RepoModel]()
+    private var searchQuery: String = ""
+    private var currentPage: Int = 1
+    private var repos: [RepoModel] = [RepoModel]()
     
-    let repoService: RepoServiceType!
+    private let repoService: RepoServiceType!
+    private let repoCoordinator: RepoCoordinatorType!
     
-    init(repoService: RepoServiceType) {
+    init(repoService: RepoServiceType, repoCoordinator: RepoCoordinatorType) {
         self.repoService = repoService
+        self.repoCoordinator = repoCoordinator
     }
 }
 
@@ -88,7 +90,7 @@ extension SearchRepoVM {
     }
     
     func goToRepoDetail(with repo: RepoModel) {
-        // TODO: - Open repo detail scene
+        repoCoordinator.goToRepoDetailScene(repoModel: repo)
     }
     
     func goToUserDetail(with repo: RepoModel) {

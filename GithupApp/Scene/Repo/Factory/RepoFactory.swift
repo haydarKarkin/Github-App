@@ -12,9 +12,9 @@ protocol RepoFactoryType {
     func makeRepoCoordinator(navigationController: UINavigationController) -> RepoCoordinatorType
     func makeRepoService() -> RepoServiceType
     func makeRepoDetailVM(repoModel: RepoModel) -> RepoDetailVM
-    func makeSearchRepoVM(repoService: RepoServiceType) -> SearchRepoVM
+    func makeSearchRepoVM(repoService: RepoServiceType, repoCoordinator: RepoCoordinatorType) -> SearchRepoVM
     func makeRepoDetailVC(repoModel: RepoModel) -> RepoDetailVC
-    func makeSearchRepoVC() -> SearchRepoVC
+    func makeSearchRepoVC(repoCoordinator: RepoCoordinatorType) -> SearchRepoVC
 }
 
 class RepoFactory: RepoFactoryType {
@@ -26,7 +26,7 @@ class RepoFactory: RepoFactoryType {
     }
     
     func makeRepoCoordinator(navigationController: UINavigationController) -> RepoCoordinatorType {
-        return RepoCoordinator(navigationController: navigationController, githubFactory: self)
+        return RepoCoordinator(navigationController: navigationController, repoFactoryType: self)
     }
     
     func makeRepoService() -> RepoServiceType {
@@ -38,8 +38,8 @@ class RepoFactory: RepoFactoryType {
         return RepoDetailVM(repoModel: repoModel)
     }
     
-    func makeSearchRepoVM(repoService: RepoServiceType) -> SearchRepoVM {
-        return SearchRepoVM(repoService: repoService)
+    func makeSearchRepoVM(repoService: RepoServiceType, repoCoordinator: RepoCoordinatorType) -> SearchRepoVM {
+        return SearchRepoVM(repoService: repoService, repoCoordinator: repoCoordinator)
     }
     
     func makeRepoDetailVC(repoModel: RepoModel) -> RepoDetailVC {
@@ -48,10 +48,10 @@ class RepoFactory: RepoFactoryType {
         return viewController
     }
     
-    func makeSearchRepoVC() -> SearchRepoVC {
+    func makeSearchRepoVC(repoCoordinator: RepoCoordinatorType) -> SearchRepoVC {
         let service: RepoServiceType = makeRepoService()
         let viewController = SearchRepoVC.instantiate()
-        viewController.viewModel = makeSearchRepoVM(repoService: service)
+        viewController.viewModel = makeSearchRepoVM(repoService: service, repoCoordinator: repoCoordinator)
         return viewController
     }
 }

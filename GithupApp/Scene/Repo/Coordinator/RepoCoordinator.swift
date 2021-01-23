@@ -15,15 +15,15 @@ protocol RepoCoordinatorType: Coordinator {
 
 class RepoCoordinator: RepoCoordinatorType {
     private let navigationController: UINavigationController
-    private let githubFactory: RepoFactoryType
+    private let repoFactoryType: RepoFactoryType
     
-    init(navigationController: UINavigationController, githubFactory: RepoFactoryType) {
+    init(navigationController: UINavigationController, repoFactoryType: RepoFactoryType) {
         self.navigationController = navigationController
-        self.githubFactory = githubFactory
+        self.repoFactoryType = repoFactoryType
     }
     
     func start() {
-        let viewController = githubFactory.makeSearchRepoVC()
+        let viewController = repoFactoryType.makeSearchRepoVC(repoCoordinator: self)
         navigationController.pushViewController(viewController, animated: false)
     }
     
@@ -32,7 +32,7 @@ class RepoCoordinator: RepoCoordinatorType {
     }
     
     func goToRepoDetailScene(repoModel: RepoModel) {
-        let viewController = githubFactory.makeRepoDetailVC(repoModel: repoModel)
+        let viewController = repoFactoryType.makeRepoDetailVC(repoModel: repoModel)
         navigationController.pushViewController(viewController, animated: false)
     }
 }

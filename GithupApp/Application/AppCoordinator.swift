@@ -22,9 +22,9 @@ class AppCoordinator: Coordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
-        let coordinator = sharedFactory
+       let repoCoordinator = sharedFactory
             .makeRepoFactory()
             .makeRepoCoordinator(navigationController: navigationController)
-        coordinate(to: coordinator)
+        coordinate(to: repoCoordinator)
     }
 }
