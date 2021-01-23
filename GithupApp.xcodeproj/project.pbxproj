@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B078157725BCC59700C7217E /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078157625BCC59700C7217E /* Debounce.swift */; };
 		B078157F25BCCD7300C7217E /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078157E25BCCD7300C7217E /* UIImageView+Ext.swift */; };
+		B078158525BCE5D700C7217E /* UserRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078158325BCE5D700C7217E /* UserRepoCell.swift */; };
+		B078158625BCE5D700C7217E /* UserRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B078158425BCE5D700C7217E /* UserRepoCell.xib */; };
 		B0974D1D25BC9041004BB6E8 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974D1B25BC9041004BB6E8 /* RepoCell.swift */; };
 		B0974D1E25BC9041004BB6E8 /* RepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0974D1C25BC9041004BB6E8 /* RepoCell.xib */; };
 		B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */; };
@@ -76,6 +78,8 @@
 /* Begin PBXFileReference section */
 		B078157625BCC59700C7217E /* Debounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 		B078157E25BCCD7300C7217E /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		B078158325BCE5D700C7217E /* UserRepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoCell.swift; sourceTree = "<group>"; };
+		B078158425BCE5D700C7217E /* UserRepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserRepoCell.xib; sourceTree = "<group>"; };
 		B0974D1B25BC9041004BB6E8 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		B0974D1C25BC9041004BB6E8 /* RepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCell.xib; sourceTree = "<group>"; };
 		B0FE8ADB25B8ABB400CAF70D /* GithupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -491,6 +495,8 @@
 		B0FE8BFE25BA0FAE00CAF70D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B078158325BCE5D700C7217E /* UserRepoCell.swift */,
+				B078158425BCE5D700C7217E /* UserRepoCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -608,6 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B078158625BCE5D700C7217E /* UserRepoCell.xib in Resources */,
 				B0FE8AEB25B8ABB700CAF70D /* LaunchScreen.storyboard in Resources */,
 				B0FE8C0025BA0FE200CAF70D /* User.storyboard in Resources */,
 				B0FE8C3925BB73F700CAF70D /* UserReposResponse.json in Resources */,
@@ -670,6 +677,7 @@
 				B0FE8B6825B8B73100CAF70D /* SearchRepoModel.swift in Sources */,
 				B0FE8B3E25B8AF0800CAF70D /* UserDetailVM.swift in Sources */,
 				B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */,
+				B078158525BCE5D700C7217E /* UserRepoCell.swift in Sources */,
 				B0FE8B5925B8B1D200CAF70D /* RepoCoordinator.swift in Sources */,
 				B0FE8BEB25BA088600CAF70D /* String+Ext.swift in Sources */,
 				B0FE8B6D25B8B84500CAF70D /* RepoModel.swift in Sources */,
