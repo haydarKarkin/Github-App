@@ -28,7 +28,8 @@ class UserFactory: UserFactoryType {
     }
     
     func makeUserService() -> UserServiceType {
-        return UserService()
+        let clientProvider: ClientProvider<UserAPI> = sharedFactory.makeClientProvider()
+        return UserService(provider: clientProvider)
     }
     
     func makeUserDetailVM() -> UserDetailVM {
