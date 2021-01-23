@@ -17,6 +17,7 @@ struct Configs {
     
     struct UI {
         static let estimatedRowHeight: CGFloat = 50.0
+        static let placeholderImage = UIImage.init(named: "placeholder")
     }
     
     struct Network {

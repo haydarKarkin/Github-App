@@ -36,6 +36,7 @@ class RepoCell: UITableViewCell, Reusable {
     func configure(with model: RepoModel, openUserDetail: ((RepoModel) -> Void)?) {
         repoNameLabel.text = model.fullName
         userNameLabel.text = model.owner?.login
+        avatarImageView.downloadImageFrom(link: model.owner?.avatarURL)
         
         openUserDetailClosure = openUserDetail
     }

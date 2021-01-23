@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B078157725BCC59700C7217E /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078157625BCC59700C7217E /* Debounce.swift */; };
+		B078157F25BCCD7300C7217E /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078157E25BCCD7300C7217E /* UIImageView+Ext.swift */; };
 		B0974D1D25BC9041004BB6E8 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974D1B25BC9041004BB6E8 /* RepoCell.swift */; };
 		B0974D1E25BC9041004BB6E8 /* RepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0974D1C25BC9041004BB6E8 /* RepoCell.xib */; };
 		B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		B078157625BCC59700C7217E /* Debounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
+		B078157E25BCCD7300C7217E /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		B0974D1B25BC9041004BB6E8 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		B0974D1C25BC9041004BB6E8 /* RepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCell.xib; sourceTree = "<group>"; };
 		B0FE8ADB25B8ABB400CAF70D /* GithupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,6 +419,7 @@
 				B0FE8BE225BA087100CAF70D /* Reusable.swift */,
 				B0FE8BEA25BA088600CAF70D /* String+Ext.swift */,
 				B0FE8BEF25BA089D00CAF70D /* UITableView+Ext.swift */,
+				B078157E25BCCD7300C7217E /* UIImageView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 			files = (
 				B0FE8B3925B8AED400CAF70D /* UserDetailVC.swift in Sources */,
 				B0FE8B7225B8B89600CAF70D /* OwnerModel.swift in Sources */,
+				B078157F25BCCD7300C7217E /* UIImageView+Ext.swift in Sources */,
 				B0FE8C4125BB74F000CAF70D /* UserAPI.swift in Sources */,
 				B0FE8AE325B8ABB400CAF70D /* SearchRepoVC.swift in Sources */,
 				B0FE8B5425B8AFDE00CAF70D /* RepoService.swift in Sources */,
