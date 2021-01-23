@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0974D1D25BC9041004BB6E8 /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0974D1B25BC9041004BB6E8 /* RepoCell.swift */; };
+		B0974D1E25BC9041004BB6E8 /* RepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0974D1C25BC9041004BB6E8 /* RepoCell.xib */; };
 		B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */; };
 		B0FE8AE325B8ABB400CAF70D /* SearchRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8AE225B8ABB400CAF70D /* SearchRepoVC.swift */; };
 		B0FE8AE625B8ABB400CAF70D /* Repo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FE8AE425B8ABB400CAF70D /* Repo.storyboard */; };
@@ -70,6 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0974D1B25BC9041004BB6E8 /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
+		B0974D1C25BC9041004BB6E8 /* RepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCell.xib; sourceTree = "<group>"; };
 		B0FE8ADB25B8ABB400CAF70D /* GithupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE8ADE25B8ABB400CAF70D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FE8AE225B8ABB400CAF70D /* SearchRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoVC.swift; sourceTree = "<group>"; };
@@ -286,6 +290,8 @@
 		B0FE8B2B25B8AD8200CAF70D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B0974D1B25BC9041004BB6E8 /* RepoCell.swift */,
+				B0974D1C25BC9041004BB6E8 /* RepoCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				B0FE8AEB25B8ABB700CAF70D /* LaunchScreen.storyboard in Resources */,
 				B0FE8C0025BA0FE200CAF70D /* User.storyboard in Resources */,
 				B0FE8C3925BB73F700CAF70D /* UserReposResponse.json in Resources */,
+				B0974D1E25BC9041004BB6E8 /* RepoCell.xib in Resources */,
 				B0FE8AE825B8ABB700CAF70D /* Assets.xcassets in Resources */,
 				B0FE8AE625B8ABB400CAF70D /* Repo.storyboard in Resources */,
 				B0FE8C2C25BB73A800CAF70D /* SearchRepoResponse.json in Resources */,
@@ -634,6 +641,7 @@
 				B0FE8ADF25B8ABB400CAF70D /* AppDelegate.swift in Sources */,
 				B0FE8BF025BA089D00CAF70D /* UICollectionView+Ext.swift in Sources */,
 				B0FE8C4625BB788600CAF70D /* RepoAPI.swift in Sources */,
+				B0974D1D25BC9041004BB6E8 /* RepoCell.swift in Sources */,
 				B0FE8B4C25B8AF3400CAF70D /* RepoDetailVM.swift in Sources */,
 				B0FE8BE325BA087100CAF70D /* Reusable.swift in Sources */,
 				B0FE8B8325B8CE0300CAF70D /* ViewController.swift in Sources */,
