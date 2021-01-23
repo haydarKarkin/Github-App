@@ -20,7 +20,11 @@ class RepoService: RepoServiceType {
     }
     
     func search(query: String, page: Int, completion: @escaping(Result<[RepoModel], Error>) -> ()) {
-        provider.request(target: .search(query: query, perPage: 10, page: page), responseType: SearchRepoModel.self) { result in
+        provider.request(target: .search(query: query,
+                                         perPage: Configs.Network.paginationNumber,
+                                         page: page),
+                         responseType: SearchRepoModel.self) { result in
+            
             switch result {
                 case .success(let resp):
                     completion(.success(resp.repos ?? []))

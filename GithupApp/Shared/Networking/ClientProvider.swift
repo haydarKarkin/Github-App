@@ -26,6 +26,8 @@ final class ClientProvider<T: TargetType> {
             switch result {
                 case .success(let data):
                     let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(Configs.Network.dateFormatter)
+                    
                     do {
                         let resp = try decoder.decode(responseType, from: data)
                         completion(.success(resp))
