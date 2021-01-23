@@ -23,7 +23,7 @@
 		B0FE8B5925B8B1D200CAF70D /* RepoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5825B8B1D200CAF70D /* RepoCoordinator.swift */; };
 		B0FE8B5E25B8B1E000CAF70D /* RepoFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B5D25B8B1E000CAF70D /* RepoFactory.swift */; };
 		B0FE8B6325B8B58300CAF70D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B6225B8B58300CAF70D /* UserModel.swift */; };
-		B0FE8B6825B8B73100CAF70D /* UserRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B6725B8B73100CAF70D /* UserRepoModel.swift */; };
+		B0FE8B6825B8B73100CAF70D /* SearchRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B6725B8B73100CAF70D /* SearchRepoModel.swift */; };
 		B0FE8B6D25B8B84500CAF70D /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B6C25B8B84500CAF70D /* RepoModel.swift */; };
 		B0FE8B7225B8B89600CAF70D /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B7125B8B89600CAF70D /* OwnerModel.swift */; };
 		B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FE8B7625B8B8F000CAF70D /* LicenseModel.swift */; };
@@ -92,7 +92,7 @@
 		B0FE8B5825B8B1D200CAF70D /* RepoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCoordinator.swift; sourceTree = "<group>"; };
 		B0FE8B5D25B8B1E000CAF70D /* RepoFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoFactory.swift; sourceTree = "<group>"; };
 		B0FE8B6225B8B58300CAF70D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		B0FE8B6725B8B73100CAF70D /* UserRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoModel.swift; sourceTree = "<group>"; };
+		B0FE8B6725B8B73100CAF70D /* SearchRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoModel.swift; sourceTree = "<group>"; };
 		B0FE8B6C25B8B84500CAF70D /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
 		B0FE8B7125B8B89600CAF70D /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
 		B0FE8B7625B8B8F000CAF70D /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
@@ -210,12 +210,12 @@
 		B0FE8B2125B8AD0700CAF70D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				B0FE8BE125BA086300CAF70D /* Extensions */,
-				B0FE8BCB25B9D9C400CAF70D /* Networking */,
 				B0FE8B8A25B8CE4E00CAF70D /* Config */,
 				B0FE8BA125B8D10C00CAF70D /* Coordinator */,
 				B0FE8BBB25B8DA4C00CAF70D /* Environment */,
+				B0FE8BE125BA086300CAF70D /* Extensions */,
 				B0FE8BAC25B8D3EA00CAF70D /* Factory */,
+				B0FE8BCB25B9D9C400CAF70D /* Networking */,
 				B0FE8B8125B8CDEC00CAF70D /* ViewController */,
 				B0FE8B7B25B8CD2300CAF70D /* ViewModel */,
 			);
@@ -304,6 +304,7 @@
 				B0FE8B7625B8B8F000CAF70D /* LicenseModel.swift */,
 				B0FE8B7125B8B89600CAF70D /* OwnerModel.swift */,
 				B0FE8B6C25B8B84500CAF70D /* RepoModel.swift */,
+				B0FE8B6725B8B73100CAF70D /* SearchRepoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,7 +439,6 @@
 			isa = PBXGroup;
 			children = (
 				B0FE8B6225B8B58300CAF70D /* UserModel.swift */,
-				B0FE8B6725B8B73100CAF70D /* UserRepoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -643,7 +643,7 @@
 				B0FE8C1225BA107500CAF70D /* UserCoordinator.swift in Sources */,
 				B0FE8BBE25B8DA6F00CAF70D /* Environment.swift in Sources */,
 				B0FE8BA325B8D11200CAF70D /* Coordinator.swift in Sources */,
-				B0FE8B6825B8B73100CAF70D /* UserRepoModel.swift in Sources */,
+				B0FE8B6825B8B73100CAF70D /* SearchRepoModel.swift in Sources */,
 				B0FE8B3E25B8AF0800CAF70D /* UserDetailVM.swift in Sources */,
 				B0FE8B7725B8B8F000CAF70D /* LicenseModel.swift in Sources */,
 				B0FE8B5925B8B1D200CAF70D /* RepoCoordinator.swift in Sources */,
