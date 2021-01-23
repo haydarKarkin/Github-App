@@ -13,4 +13,8 @@ struct Configs {
         static let globalErrorTitle = "There is a problem!"
         static let globalErrorDesc = "Please try again later."
     }
+    
+    struct UI {
+        static let estimatedRowHeight: CGFloat = 50.0
+    }
 }
