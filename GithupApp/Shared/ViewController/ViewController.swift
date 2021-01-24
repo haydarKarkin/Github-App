@@ -10,7 +10,7 @@ import UIKit
 class ViewController<T: ViewModelType>: UIViewController {
     
     var viewModel: T!
-    var activityView: UIActivityIndicatorView?
+    var activityViews: [UIView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +39,11 @@ class ViewController<T: ViewModelType>: UIViewController {
     func bindViewModel() {
         
         viewModel.onLoadHandling = { [weak self] (isLoading) in
+            guard let self = self else { return }
             if isLoading {
-                self?.showActivityIndicator()
+                self.showActivityIndicator(onView: self.view)
             } else {
-                self?.hideActivityIndicator()
+                self.hideActivityIndicator()
             }
         }
         
@@ -56,17 +57,24 @@ class ViewController<T: ViewModelType>: UIViewController {
 
 extension ViewController {
     
-    func showActivityIndicator() {
-        activityView = UIActivityIndicatorView(style: .large)
-        activityView?.center = self.view.center
-        view.addSubview(activityView!)
-        activityView?.startAnimating()
+    func showActivityIndicator(onView : UIView) {
+        let spinnerView = UIView.init(frame: onView.bounds)
+        let activityIndicator = UIActivityIndicatorView.init(style: .large)
+        activityIndicator.startAnimating()
+        activityIndicator.center = spinnerView.center
+        
+        DispatchQueue.main.async {
+            spinnerView.addSubview(activityIndicator)
+            onView.addSubview(spinnerView)
+        }
+        
+        activityViews.append(spinnerView)
         view.isUserInteractionEnabled = false
     }
     
-    func hideActivityIndicator(){
-        if (activityView != nil){
-            activityView?.stopAnimating()
+    func hideActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityViews.popLast()?.removeFromSuperview()
         }
         view.isUserInteractionEnabled = true
     }
