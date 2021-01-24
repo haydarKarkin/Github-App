@@ -40,8 +40,15 @@ final class ClientProvider<T: TargetType> {
             }
         }
     }
-    
-    func download(target: T, completion: @escaping (Result<Data, Error>) -> Void) {
+}
+
+extension ClientProvider {
+    private func load(_ target: T, deliverQueue: DispatchQueue = DispatchQueue.main, completion: @escaping (Result<Data, Error>) -> Void) {
+        
+        if shouldStub == .immediatelyStub {
+            completion(.success(target.sampleData))
+            return
+        }
         
         guard let url = target.urlRequest.url?.absoluteString else {
             completion(.failure(NetworkError.missingURL))
@@ -53,30 +60,6 @@ final class ClientProvider<T: TargetType> {
                 completion(.success(data))
                 return
             }
-        }
-        
-        load(target) { [self] result in
-            switch result {
-                case .success(let data):
-                    completion(.success(data))
-                    
-                    if target.cacheable {
-                        self.setCacheData(with: url, data: data)
-                    }
-                    
-                case .failure(let error):
-                    completion(.failure(error))
-            }
-        }
-    }
-}
-
-extension ClientProvider {
-    private func load(_ target: T, deliverQueue: DispatchQueue = DispatchQueue.main, completion: @escaping (Result<Data, Error>) -> Void) {
-        
-        if shouldStub == .immediatelyStub {
-            completion(.success(target.sampleData))
-            return
         }
         
         urlSession.dataTask(with: target.urlRequest) { (data, _, error) in
