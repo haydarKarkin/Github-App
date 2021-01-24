@@ -36,13 +36,18 @@ class UserDetailVC: ViewController<UserDetailVM> {
         tableView.tableFooterView = UIView()
         tableView.rowHeight = Configs.UI.estimatedRowHeight
         tableView.registerCellNib(UserRepoCell.self)
+        tableView.registerHeaderFooterViewNib(UserInfoHeaderView.self)
     }
     
     override func bindViewModel() {
         super.bindViewModel()
         
         let userInfoClosure: ((UserModel) -> Void)? = { [weak self] (result) in
-            // TODO: - Update UI elements that are related with User
+            DispatchQueue.main.async {
+                if let header = self?.tableView.headerView(forSection: 0) as? UserInfoHeaderView {
+                    header.configure(with: result)
+                }
+            }
         }
         
         let reposClosure: (([RepoModel]) -> Void)? = { [weak self] (result) in
@@ -80,6 +85,16 @@ extension UserDetailVC: UITableViewDataSource {
         let cell: UserRepoCell = tableView.dequeueReusableCell(indexPath: indexPath)
         cell.configure(with: repos[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView: UserInfoHeaderView = tableView.dequeueReusableHeaderFooterView()
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Configs.UI.heightForHeaderInSection
     }
 }
 

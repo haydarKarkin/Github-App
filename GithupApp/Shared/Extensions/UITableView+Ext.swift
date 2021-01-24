@@ -15,9 +15,22 @@ extension UITableView {
         self.register(nib, forCellReuseIdentifier: identifier)
     }
     
+    func registerHeaderFooterViewNib(_ viewClass: AnyClass) {
+        let identifier = String.className(viewClass)
+        let nib = UINib(nibName: identifier, bundle: nil)
+        self.register(nib, forHeaderFooterViewReuseIdentifier: identifier)
+    }
+    
     func dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: Reusable {
         guard let cell = self.dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
             fatalError("Could not deque table cell")
+        }
+        return cell
+    }
+    
+    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>() -> T where T: Reusable {
+        guard let cell = self.dequeueReusableHeaderFooterView(withIdentifier: T.reuseIdentifier) as? T else {
+            fatalError("Could not deque table header cell")
         }
         return cell
     }
