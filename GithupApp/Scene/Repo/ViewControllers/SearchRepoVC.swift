@@ -23,9 +23,11 @@ class SearchRepoVC: ViewController<SearchRepoVM> {
     var repos: [RepoModel] = [RepoModel]() {
         didSet {
             tableView.reloadData()
+            isFirstLoad = false
         }
     }
-    
+    var isFirstLoad: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -73,6 +75,13 @@ extension SearchRepoVC: Storyboarded {
 // MARK: - UITableViewDataSource
 extension SearchRepoVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if repos.isEmpty && !isFirstLoad {
+            self.tableView.setEmptyMessage(Configs.Text.noSearchResult)
+        } else {
+            self.tableView.restore()
+        }
+        
         return repos.count
     }
     

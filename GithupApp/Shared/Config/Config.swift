@@ -13,6 +13,8 @@ struct Configs {
         static let globalErrorTitle = "There is a problem!"
         static let globalErrorDesc = "Please try again later."
         static let searchPlaceHolder = "Type repo name here to search repos"
+        static let userNoRepos = "User has no repos."
+        static let noSearchResult = "Please type another repo's name.\n There is no result."
     }
     
     struct UI {

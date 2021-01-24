@@ -78,6 +78,13 @@ extension UserDetailVC: Storyboarded {
 // MARK: - UITableViewDataSource
 extension UserDetailVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if repos.isEmpty {
+            self.tableView.setEmptyMessage(Configs.Text.userNoRepos)
+        } else {
+            self.tableView.restore()
+        }
+        
         return repos.count
     }
     
