@@ -11,6 +11,7 @@ class UserDetailVM: ViewModelType {
     
     private var currentPage: Int = 1
     private var repos: [RepoModel] = [RepoModel]()
+    private var userInfo: UserModel?
     
     private let userService: UserServiceType!
     private let owner: OwnerModel!
@@ -86,7 +87,14 @@ extension UserDetailVM {
     }
     
     func nextPage(completion: (([RepoModel]) -> Void)?) {
-        let nextPage = currentPage + 1
-        getUserRepos(page: nextPage, completion: completion)
+        
+        guard let userInfo = userInfo else {
+            return
+        }
+        
+        if repos.count < userInfo.publicRepos ?? 0 {
+            let nextPage = currentPage + 1
+            getUserRepos(page: nextPage, completion: completion)
+        }
     }
 }

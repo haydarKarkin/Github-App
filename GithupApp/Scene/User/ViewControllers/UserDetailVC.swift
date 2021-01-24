@@ -105,7 +105,7 @@ extension UserDetailVC: UITableViewDelegate {
         let isReachedBottom = indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
         
         if isReachedBottom {
-            // TODO: - Call next page
+            nextClosure?()
         }
     }
 }
