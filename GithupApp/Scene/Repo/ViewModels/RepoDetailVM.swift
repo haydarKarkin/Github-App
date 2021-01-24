@@ -10,9 +10,11 @@ import Foundation
 class RepoDetailVM: ViewModelType {
     
     private let repoModel: RepoModel!
+    private let repoCoordinator: RepoCoordinatorType!
     
-    init(repoModel: RepoModel) {
+    init(repoModel: RepoModel, repoCoordinator: RepoCoordinatorType) {
         self.repoModel = repoModel
+        self.repoCoordinator = repoCoordinator
     }
 }
 
@@ -41,6 +43,10 @@ extension RepoDetailVM {
 // MARK: - Logics
 extension RepoDetailVM {
     func goToUserDetailScene() {
-        // TODO: - Open user detail scene
+        if let owner = repoModel.owner {
+            repoCoordinator.goToUserDetailScene(owner: owner)
+        } else {
+            onErrorHandling?(NetworkError.noOwner)
+        }
     }
 }

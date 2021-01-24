@@ -37,7 +37,7 @@ class RepoCoordinator: RepoCoordinatorType {
     }
     
     func goToRepoDetailScene(repoModel: RepoModel) {
-        let viewController = repoFactory.makeRepoDetailVC(repoModel: repoModel)
+        let viewController = repoFactory.makeRepoDetailVC(repoModel: repoModel, repoCoordinator: self)
         navigationController.pushViewController(viewController, animated: false)
     }
 }
