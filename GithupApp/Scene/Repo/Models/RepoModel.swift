@@ -14,7 +14,7 @@ struct RepoModel: Codable {
     let itemPrivate: Bool?
     let owner: OwnerModel?
     let htmlURL: String?
-    let itemDescription: String?
+    let repoDescription: String?
     let fork: Bool?
     let url: String?
     let forksURL: String?
@@ -62,7 +62,7 @@ struct RepoModel: Codable {
         case itemPrivate = "private"
         case owner
         case htmlURL = "html_url"
-        case itemDescription = "description"
+        case repoDescription = "description"
         case fork, url
         case forksURL = "forks_url"
         case keysURL = "keys_url"
