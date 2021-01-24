@@ -63,6 +63,7 @@ extension UserDetailVM {
             self.onLoadHandling?(false)
             switch result {
                 case .success(let userInfo):
+                    self.userInfo = userInfo
                     completion?(userInfo)
                 case .failure(let error):
                     self.onErrorHandling?(error)

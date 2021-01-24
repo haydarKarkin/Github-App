@@ -12,6 +12,7 @@ class SearchRepoVM: ViewModelType {
     private var searchQuery: String = ""
     private var currentPage: Int = 1
     private var repos: [RepoModel] = [RepoModel]()
+    private var totalCount: Int = 0
     
     private let repoService: RepoServiceType!
     private let repoCoordinator: RepoCoordinatorType!
@@ -74,9 +75,9 @@ extension SearchRepoVM {
         repoService.search(query: query, page: page) { result in
             self.onLoadHandling?(false)
             switch result {
-                case .success(let newRepos):
-                    self.repos = self.repos + newRepos
-                    
+                case .success(let resp):
+                    self.repos = self.repos + (resp.repos ?? [])
+                    self.totalCount = resp.totalCount ?? 0
                     completion?(self.repos)
                 case .failure(let error):
                     self.onErrorHandling?(error)
@@ -84,9 +85,11 @@ extension SearchRepoVM {
         }
     }
     
-    func nextPage(completion: (([RepoModel]) -> Void)?) {
-        let nextPage = currentPage + 1
-        search(query: searchQuery, page: nextPage, completion: completion)
+    func nextPage(completion: (([RepoModel]) -> Void)?) {        
+        if repos.count < totalCount {
+            let nextPage = currentPage + 1
+            search(query: searchQuery, page: nextPage, completion: completion)
+        }
     }
     
     func goToRepoDetail(with repo: RepoModel) {

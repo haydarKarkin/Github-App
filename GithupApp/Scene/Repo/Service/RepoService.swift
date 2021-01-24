@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RepoServiceType {
-    func search(query: String, page: Int, completion: @escaping(Result<[RepoModel], Error>) -> ())
+    func search(query: String, page: Int, completion: @escaping(Result<SearchRepoModel, Error>) -> ())
 }
 
 class RepoService: RepoServiceType {
@@ -19,7 +19,7 @@ class RepoService: RepoServiceType {
         self.provider = provider
     }
     
-    func search(query: String, page: Int, completion: @escaping(Result<[RepoModel], Error>) -> ()) {
+    func search(query: String, page: Int, completion: @escaping(Result<SearchRepoModel, Error>) -> ()) {
         provider.request(target: .search(query: query,
                                          perPage: Configs.Network.paginationNumber,
                                          page: page),
@@ -27,7 +27,7 @@ class RepoService: RepoServiceType {
             
             switch result {
                 case .success(let resp):
-                    completion(.success(resp.repos ?? []))
+                    completion(.success(resp))
                 case .failure(let error):
                     completion(.failure(error))
                     print(error.localizedDescription)
