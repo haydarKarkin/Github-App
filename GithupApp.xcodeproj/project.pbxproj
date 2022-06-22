@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DFFF522286375F600503429 /* AsyncClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFF521286375F600503429 /* AsyncClientProvider.swift */; };
 		B078157725BCC59700C7217E /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078157625BCC59700C7217E /* Debounce.swift */; };
 		B078157F25BCCD7300C7217E /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078157E25BCCD7300C7217E /* UIImageView+Ext.swift */; };
 		B078158525BCE5D700C7217E /* UserRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078158325BCE5D700C7217E /* UserRepoCell.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DFFF521286375F600503429 /* AsyncClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncClientProvider.swift; sourceTree = "<group>"; };
 		B078157625BCC59700C7217E /* Debounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debounce.swift; sourceTree = "<group>"; };
 		B078157E25BCCD7300C7217E /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		B078158325BCE5D700C7217E /* UserRepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoCell.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				B0FE8BD425B9DA6000CAF70D /* ClientProvider.swift */,
 				B0FE8BD925B9DA8D00CAF70D /* NetworkError.swift */,
 				B0FE8BCC25B9D9E800CAF70D /* Target.swift */,
+				3DFFF521286375F600503429 /* AsyncClientProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				B0FE8B3425B8AE9200CAF70D /* RepoDetailVC.swift in Sources */,
 				B0FE8BCD25B9D9E800CAF70D /* Target.swift in Sources */,
 				B0FE8C0525BA103100CAF70D /* UserService.swift in Sources */,
+				3DFFF522286375F600503429 /* AsyncClientProvider.swift in Sources */,
 				B078157725BCC59700C7217E /* Debounce.swift in Sources */,
 				B0FE8BA825B8D14800CAF70D /* AppCoordinator.swift in Sources */,
 				B0FE8B7D25B8CD3A00CAF70D /* ViewModel.swift in Sources */,

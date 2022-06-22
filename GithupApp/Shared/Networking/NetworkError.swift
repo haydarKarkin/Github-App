@@ -14,4 +14,5 @@ public enum NetworkError : String, Error {
     case decodingFailed = "Can't read received data."
     case noNetwork = "Check your internet connection"
     case noOwner = "Could't find owner of the repo."
+    case noCatch = "Could't find catched data."
 }

@@ -9,7 +9,7 @@ import Foundation
 
 typealias ViewModelType = ViewModel & ViewModelTransformType
 
-protocol ViewModelTransformType: class {
+protocol ViewModelTransformType: AnyObject {
     
     associatedtype Input
     associatedtype Output
